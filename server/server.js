@@ -5,7 +5,6 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 // Core Middleware
 app.use(cors());
@@ -21,9 +20,10 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/items', require('./routes/items'));
 app.use('/api/orders', require('./routes/orders'));
 
-// Start The Server
-/*app.listen(PORT, () => {
-  console.log(`Server is running on port: ${PORT}`);
-});*/
+// DO NOT INCLUDE app.listen() FOR VERCEL
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port: ${PORT}`);
+// });
 
+// Export the app for Vercel
 module.exports = app;
