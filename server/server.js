@@ -22,6 +22,8 @@ app.use('/api/items', require('./routes/items'));
 app.use('/api/orders', require('./routes/orders'));
 
 // Start The Server
-app.listen(PORT, () => {
+/*app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
-});
+});*/
+
+module.exports = app;
